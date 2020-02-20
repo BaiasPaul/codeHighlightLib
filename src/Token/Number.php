@@ -1,7 +1,9 @@
 <?php
 
+namespace HighlightLib\Token;
+use HighlightLib\Contracts\TokenInterface;
 
-class Number implements \HighlightLib\Contracts\TokenInterface
+class Number implements TokenInterface
 {
     public function getCSS(): string
     {
