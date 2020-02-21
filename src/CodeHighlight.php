@@ -3,6 +3,11 @@
 declare(strict_types=1);
 namespace HighlightLib;
 
+use HighlightLib\Contracts\AssemblerInterface;
+use HighlightLib\Contracts\ClasifierInterface;
+use HighlightLib\Contracts\TokenizerInterface;
+
+
 class CodeHighlight
 {
     private $tokenizer;
@@ -14,14 +19,24 @@ class CodeHighlight
         $this->tokenizer = $tokenizer;
         $this->clasifier = $clasifier;
         $this->assembler = $assembler;
-
-
     }
 
     public function highlight(string $string): string
     {
-        // use the defined classes/services to perform the highlighting on $string
-        $string = "lib";
-        return $string;
+        $array = $this->tokenizer->tokenize($string);
+
+        $clasifiedArray = array();
+        foreach($array as $item) {
+
+            if ($this->clasifier->clasify($item)) {
+
+                $clasa = $this->clasifier->clasify($item);
+                $clasifiedArray[$item] = $clasa->getCSS();
+            }
+        }
+        print_r($clasifiedArray);
+
+        return $this->assembler->assemble($clasifiedArray);
+
     }
 }
