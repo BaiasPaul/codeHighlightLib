@@ -10,8 +10,4 @@ class Atom extends AbstractToken
         return "atom";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

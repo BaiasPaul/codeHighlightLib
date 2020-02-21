@@ -10,8 +10,4 @@ class Keyword extends AbstractToken
         return "keyword";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

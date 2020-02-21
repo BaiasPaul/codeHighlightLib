@@ -10,8 +10,4 @@ class Bracket extends AbstractToken
         return "bracket";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

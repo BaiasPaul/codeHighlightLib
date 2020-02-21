@@ -12,6 +12,8 @@ abstract class AbstractToken implements TokenInterface
         $this->text = $text;
     }
     abstract public function getCSS(): string;
-    abstract public function getText(): string;
+    public function getText(): string{
+        return '<span class="'. $this->getCSS() . '">' . $this->text . '</span> ';
+    }
 
 }

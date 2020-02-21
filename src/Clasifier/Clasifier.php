@@ -9,13 +9,20 @@ use HighlightLib\Token\Token;
 
 class Clasifier implements ClasifierInterface
 {
+    private $config;
+
+    public function __construct()
+    {
+        $this->config = require '/var/www/codeHighlightLib/src/Config/Config.php';
+    }
 
     public function clasify(string $stringToken): TokenInterface
     {
-        $config = require 'src/Config/Config.php';
-        foreach($config as $regex => $class)
+//        $config = require 'src/Config/Config.php';
+
+        foreach($this->config as $regex => $class)
             if(preg_match($regex,$stringToken))
-                return new $class;
-            return new Token();
+                return new $class($stringToken);
+        return new Token($stringToken);
     }
 }

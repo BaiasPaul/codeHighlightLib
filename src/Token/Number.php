@@ -10,8 +10,4 @@ class Number extends AbstractToken
         return "number";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

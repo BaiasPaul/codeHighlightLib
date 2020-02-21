@@ -14,6 +14,6 @@ class Token extends AbstractToken
 
     public function getText(): string
     {
-        return $this->text;
+        return $this->text . " ";
     }
 }

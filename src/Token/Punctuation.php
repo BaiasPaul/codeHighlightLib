@@ -10,8 +10,4 @@ class Punctuation extends AbstractToken
         return "punctuation";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

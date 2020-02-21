@@ -10,8 +10,4 @@ class Variable extends AbstractToken
         return "variable";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

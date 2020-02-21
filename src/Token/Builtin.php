@@ -10,8 +10,4 @@ class Builtin extends AbstractToken
         return "builtin";
     }
 
-    public function getText(): string
-    {
-        return $this->text;
-    }
 }

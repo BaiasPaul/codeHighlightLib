@@ -27,14 +27,11 @@ class CodeHighlight
 
         $clasifiedArray = array();
         foreach($array as $item) {
-
-            if ($this->clasifier->clasify($item)) {
-
-                $clasa = $this->clasifier->clasify($item);
-                $clasifiedArray[$item] = $clasa->getCSS();
-            }
+            $clasifiedArray[] = $this->clasifier->clasify($item);
         }
-        print_r($clasifiedArray);
+//        print_r("<br>");
+//        print_r($clasifiedArray);
+//        print_r("<br><br>");
 
         return $this->assembler->assemble($clasifiedArray);
 
