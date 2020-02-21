@@ -1,10 +1,16 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
+/**
+ * Class Keyword
+ * @package HighlightLib\Token
+ */
 class Keyword extends AbstractToken
 {
+    /**
+     * @return string
+     */
     public function getCSS(): string
     {
         return "keyword";

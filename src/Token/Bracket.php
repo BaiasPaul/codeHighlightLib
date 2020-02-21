@@ -1,10 +1,16 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
+/**
+ * Class Bracket
+ * @package HighlightLib\Token
+ */
 class Bracket extends AbstractToken
 {
+    /**
+     * @return string
+     */
     public function getCSS(): string
     {
         return "bracket";

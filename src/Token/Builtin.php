@@ -1,10 +1,16 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
+/**
+ * Class Builtin
+ * @package HighlightLib\Token
+ */
 class Builtin extends AbstractToken
 {
+    /**
+     * @return string
+     */
     public function getCSS(): string
     {
         return "builtin";

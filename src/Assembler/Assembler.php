@@ -1,11 +1,19 @@
 <?php
 
 namespace HighlightLib\Assembler;
+
 use HighlightLib\Contracts\AssemblerInterface;
 
+/**
+ * Class Assembler
+ * @package HighlightLib\Assembler
+ */
 class Assembler implements AssemblerInterface
 {
-
+    /**
+     * @param array $tokens
+     * @return string
+     */
     public function assemble(array $tokens): string
     {
         $result = "";
@@ -15,6 +23,7 @@ class Assembler implements AssemblerInterface
             $result .= $item->getText();
             $currentOffset = $item->getOffset();
         }
+
         return $result;
     }
 }

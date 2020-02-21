@@ -1,10 +1,15 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
-
+/**
+ * Class Number
+ * @package HighlightLib\Token
+ */
 class Number extends AbstractToken
 {
+    /**
+     * @return string
+     */
     public function getCSS(): string
     {
         return "number";

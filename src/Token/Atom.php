@@ -1,10 +1,16 @@
 <?php
 
 namespace HighlightLib\Token;
-use HighlightLib\Contracts\TokenInterface;
 
+/**
+ * Class Atom
+ * @package HighlightLib\Token
+ */
 class Atom extends AbstractToken
 {
+    /**
+     * @return string
+     */
     public function getCSS(): string
     {
         return "atom";
