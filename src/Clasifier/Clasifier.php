@@ -1,33 +1,21 @@
 <?php
 
+declare(strict_types=1);
+namespace HighlightLib\Clasifier;
+use HighlightLib\Contracts\ClasifierInterface;
 use HighlightLib\Contracts\TokenInterface;
+use HighlightLib\Config;
+use HighlightLib\Token\Token;
 
-class Clasifier implements \HighlightLib\Contracts\ClasifierInterface
+class Clasifier implements ClasifierInterface
 {
 
     public function clasify(string $stringToken): TokenInterface
     {
-        switch($stringToken) {
-            case "atom":
-                return new Atom();
-                break;
-            case "bracket":
-                return new Bracket();
-                break;
-            case "builtin":
-                return new Builtin();
-                break;
-            case "keyword":
-                return new Keyword();
-                break;
-            case "number":
-                return new Number();
-                break;
-            case "punctuation":
-                return new Punctuation();
-                break;
-            case "variable":
-                return new Variable();
-        }
+        $config = require 'src/Config/Config.php';
+        foreach($config as $regex => $class)
+            if(preg_match($regex,$stringToken))
+                return new $class;
+            return new Token();
     }
 }
