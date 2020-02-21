@@ -14,6 +14,6 @@ class NewLine extends AbstractToken
 
     public function getText(): string
     {
-        return "<br>";
+        return PHP_EOL;
     }
 }

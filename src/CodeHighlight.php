@@ -29,9 +29,6 @@ class CodeHighlight
         foreach($array as $item) {
             $clasifiedArray[] = $this->clasifier->clasify($item);
         }
-//        print_r("<br>");
-//        print_r($clasifiedArray);
-//        print_r("<br><br>");
 
         return $this->assembler->assemble($clasifiedArray);
 

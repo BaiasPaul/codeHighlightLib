@@ -16,13 +16,12 @@ class Clasifier implements ClasifierInterface
         $this->config = require '/var/www/codeHighlightLib/src/Config/Config.php';
     }
 
-    public function clasify(string $stringToken): TokenInterface
+    public function clasify(array $stringToken): TokenInterface
     {
-//        $config = require 'src/Config/Config.php';
 
         foreach($this->config as $regex => $class)
-            if(preg_match($regex,$stringToken))
-                return new $class($stringToken);
-        return new Token($stringToken);
+            if(preg_match($regex,$stringToken[0]))
+                return new $class($stringToken[0],$stringToken[1]);
+        return new Token($stringToken[0],$stringToken[1]);
     }
 }
