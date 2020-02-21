@@ -14,9 +14,9 @@ return array (
     '/^\$[a-zA-Z_]\w*$/' => "HighlightLib\Token\Variable",
     '/\.|,|;|:|‘|“|\[|\]|\(|\)/' => "HighlightLib\Token\Punctuation",
     '/^{|}$/' => "HighlightLib\Token\Bracket",
-    "/$atoms/" => "HighlightLib\Token\Atom",
-    "/$keyword/" => "HighlightLib\Token\Keyword",
-    "/$builtin/" => "HighlightLib\Token\Builtin",
+    "/\b(?:$atoms)\b/" => "HighlightLib\Token\Atom",
+    "/\b(?:$keyword)\b/" => "HighlightLib\Token\Keyword",
+    "/\b(?:$builtin)\b/" => "HighlightLib\Token\Builtin",
     '/\n|\r\n/' => "HighlightLib\Token\NewLine"
 );
 
